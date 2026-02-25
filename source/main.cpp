@@ -41,10 +41,9 @@ for (const auto& e: elements)
 
 }
 //  nodal loads
-F[4]+= -1000;
-F[7]+= -1000;
-F[10]+= -1000;
-F[13]+= -1000;
+F[3]+= -1000;
+F[6]+= -1000;
+F[9]+= -1000;
 
 //5. partition DOFs
 std::vector<int> freeDOF,fixedDOF;
@@ -69,3 +68,4 @@ plotStructure(nodes, elements, 800, 600);
 writeresults(filename, nodes, elements, dofs, U, R, fixedDOF);
     return 0;
 }
+
