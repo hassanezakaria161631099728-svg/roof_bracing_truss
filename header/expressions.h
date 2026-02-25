@@ -4,12 +4,13 @@
 struct Node
 {int id; double x; double y;};
 std::vector<Node> generateNodes(double h, int n, double L);
-struct Element {int id; int node1; int node2;
+struct Element {int id; int n1; int n2;
 double E;
 double A;
 double I;
 double q;
-std::string loadType; // "local" or "globalS"
+std::string load_type; // "local" or "globalS"
+double L,c,s;
 };
 std::vector<Element> generateElements(int n, double E, double Aver, double Iver,
                                       double Ahor, double Ihor, double Adiag,double Idiag, double q);
@@ -27,3 +28,4 @@ void plotStructure(const std::vector<Node>& nodes,
                    int windowWidth,
                    int windowHeight);
 
+std::vector<int> extractBC(const std::vector<DOF>& dofs);
